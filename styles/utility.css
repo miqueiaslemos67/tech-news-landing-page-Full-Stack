@@ -1,0 +1,47 @@
+/*
+  Estilo utility-first: abordagem focada em classes utilitárias pequenas e reutilizáveis,
+  como 'p-4', 'text-center' ou 'bg-red-500'. Essas classes aplicam estilos específicos e 
+  evitam a criação de CSS personalizado para cada componente, permitindo montagem rápida 
+  e consistente diretamente no HTML.
+*/
+
+/* Define display como grid */
+.grid {
+  display: grid;
+}
+
+/* Define o fluxo do grid como colunas */
+.grid-flow-col {
+  grid-auto-flow: column;
+}
+
+/* Define duas colunas com mesma proporção */
+.grid-cols-2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Gaps predefinidos para espaçamento entre elementos do grid */
+.gap-16 {
+  gap: 16px;
+}
+
+.gap-32 {
+  gap: 32px;
+}
+
+/* Classes utilitárias para tamanhos e estilos de texto com base em variáveis globais */
+.text-2sxl {
+  font: var(--heading1);
+}
+
+.text-xl {
+  font: var(--heading2);
+}
+
+.text-lg {
+  font: var(--heading3);
+}
+
+.text-sm {
+  font: var(--text);
+}

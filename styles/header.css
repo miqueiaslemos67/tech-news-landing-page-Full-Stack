@@ -1,0 +1,29 @@
+/* Estilização do menu principal do cabeçalho */
+#primary {
+  padding-block: 20px; /* Espaçamento vertical superior e inferior */
+
+  /* Aplica estilos a todos os elementos <div> filhos diretos */
+  div {
+    display: flex; /* Flexbox para alinhamento horizontal */
+    align-items: center; /* Centraliza verticalmente o conteúdo */
+    gap: 8px; /* Espaço entre os itens internos */
+  }
+
+  /* Centraliza o segundo filho horizontalmente */
+  div:nth-child(2) {
+    margin-inline: auto; /* Margens automáticas nas laterais */
+  }
+
+  /* Alinha o terceiro filho à direita */
+  div:nth-child(3) {
+    justify-self: end; /* Empurra o conteúdo para o final da célula do grid */
+  }
+}
+
+/* Estilização do menu secundário de categorias */
+#secondary {
+  padding-block: 14px; /* Espaçamento vertical superior e inferior */
+  border: solid 1px var(--stroke-color); /* Borda com cor definida nas variáveis */
+  border-inline: none; /* Remove as bordas laterais */
+  justify-content: space-between; /* Espaça os itens igualmente */
+}

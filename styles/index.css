@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+/* =========================== */
+/* IMPORTAÇÃO DE ESTILOS CSS  */
+/* =========================== */
+
+/* Estilos e variáveis globais que definem cores, fontes e layouts básicos */
+@import url(global.css);
+
+/* Classes utilitárias como espaçamentos, alinhamentos e tipografia auxiliar */
+@import url(utility.css);
+
+/* Estilização do cabeçalho (menu principal e secundário) */
+@import url(header.css);
+
+/* Estilização das seções de conteúdo como destaques, AI, mais lidas e lateral */
+@import url(sections.css);
