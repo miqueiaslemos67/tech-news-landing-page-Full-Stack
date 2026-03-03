@@ -1,6 +1,7 @@
 /* Estilização do menu principal do cabeçalho */
 #primary {
   padding-block: 20px; /* Espaçamento vertical superior e inferior */
+  align-items: center;
 
   /* Aplica estilos a todos os elementos <div> filhos diretos */
   div {
@@ -25,5 +26,35 @@
   padding-block: 14px; /* Espaçamento vertical superior e inferior */
   border: solid 1px var(--stroke-color); /* Borda com cor definida nas variáveis */
   border-inline: none; /* Remove as bordas laterais */
+  align-items: center;
   justify-content: space-between; /* Espaça os itens igualmente */
+}
+
+@media (max-width: 1024px) {
+  #secondary {
+    overflow-x: auto;
+    justify-content: start;
+    gap: 24px;
+    white-space: nowrap;
+    scrollbar-width: thin;
+  }
+
+  #secondary a {
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 640px) {
+  #primary {
+    padding-block: 16px;
+  }
+
+  #primary div strong {
+    display: none;
+  }
+
+  #secondary {
+    gap: 16px;
+    padding-block: 12px;
+  }
 }

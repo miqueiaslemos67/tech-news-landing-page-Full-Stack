@@ -8,8 +8,10 @@ section header {
 /* =================== SEÇÃO DE DESTAQUE =================== */
 #featured {
   grid-area: featured;
+  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
 
   img {
+    width: 100%;
     height: 100%; /* Ocupa toda a altura do contêiner */
     object-fit: cover; /* Mantém proporção da imagem e cobre o espaço */
     border-radius: 4px; /* Arredonda cantos da imagem */
@@ -65,11 +67,13 @@ section header {
   }
 
   & > div {
-    grid-template-columns: repeat(4, 292px); /* Define 4 colunas fixas */
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   img {
+    width: 100%;
     height: 160px;
+    object-fit: cover;
   }
 
   figure {
@@ -114,13 +118,15 @@ section header {
     object-fit: cover;
   }
 
+  article {
+    grid-template-columns: minmax(0, 1fr) 176px;
+    align-items: start;
+  }
+
   h3 {
     margin-block: 8px 4px;
   }
 
-  aside {
-    grid-area: aside; /* Define a área para posicionamento no grid */
-  }
 }
 
 /* =================== SEÇÃO LATERAL - MAIS ARTIGOS =================== */
@@ -149,7 +155,87 @@ section header {
     object-fit: cover;
   }
 
+  article {
+    grid-template-columns: 72px minmax(0, 1fr);
+    align-items: start;
+  }
+
   h3 {
     margin-top: 8px;
+  }
+}
+
+@media (max-width: 1024px) {
+  #featured {
+    grid-template-columns: 1fr;
+  }
+
+  #weekly > div {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  section header {
+    padding-block: 12px 20px;
+  }
+
+  #featured > .grid {
+    grid-template-columns: 1fr;
+  }
+
+  #featured .card figcaption {
+    padding: 16px;
+  }
+
+  #weekly > div {
+    grid-template-columns: 1fr;
+  }
+
+  #ai > div,
+  #more > div {
+    gap: 24px;
+  }
+
+  #ai article {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  #ai article > div:last-child {
+    order: -1;
+  }
+
+  #ai img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+
+  #more article {
+    grid-template-columns: 96px minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  section > header.grid-flow-col {
+    grid-auto-flow: row;
+    gap: 8px;
+  }
+
+  #weekly header a,
+  #ai header a,
+  #more header a {
+    justify-self: start;
+  }
+}
+
+@media (max-width: 480px) {
+  #more article {
+    grid-template-columns: 1fr;
+  }
+
+  #more img {
+    width: 100%;
+    max-height: 220px;
   }
 }
